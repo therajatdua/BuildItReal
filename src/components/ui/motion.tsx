@@ -14,7 +14,7 @@ function FadeIn({
   children,
   delay = 0,
   direction = "up",
-  distance = 30,
+  distance = 40,
   ...props
 }: FadeInProps) {
   const offsets = {
@@ -30,7 +30,7 @@ function FadeIn({
       initial={{ opacity: 0, ...offsets[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
       {...props}
     >
       {children}
@@ -41,7 +41,7 @@ function FadeIn({
 function StaggerContainer({
   children,
   className,
-  stagger = 0.1,
+  stagger = 0.08,
 }: {
   children: ReactNode;
   className?: string;
@@ -74,11 +74,11 @@ function StaggerItem({
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0, y: 30 },
         visible: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+          transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
         },
       }}
     >
@@ -87,4 +87,33 @@ function StaggerItem({
   );
 }
 
-export { FadeIn, StaggerContainer, StaggerItem };
+function TextReveal({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+  return (
+    <div className={`overflow-hidden ${className || ""}`}>
+      <motion.div
+        initial={{ y: "100%" }}
+        whileInView={{ y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+
+function ScaleIn({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+  return (
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export { FadeIn, StaggerContainer, StaggerItem, TextReveal, ScaleIn };

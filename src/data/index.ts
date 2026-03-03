@@ -1,36 +1,36 @@
-import type { Project, Service, Testimonial, NavItem } from "@/types";
+import type { Project, Service, Testimonial, NavItem, Stat } from "@/types";
 
 export const navigation: NavItem[] = [
   { label: "Work", href: "#work" },
   { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
+  { label: "Process", href: "#process" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const projects: Project[] = [
   {
-  title: "Clixy",
-  slug: "clixy",
-  description:
-    "Modern digital agency website showcasing performance marketing, branding, and web development services with a bold, conversion-focused UI.",
-  tags: ["Agency", "Marketing", "React", "Landing Page"],
-  liveUrl: "https://clixy-one.vercel.app/",
+    title: "Clixy",
+    slug: "clixy",
+    description:
+      "Modern digital agency website showcasing performance marketing, branding, and web development services with a bold, conversion-focused UI.",
+    tags: ["Agency", "Marketing", "React"],
+    liveUrl: "https://clixy-one.vercel.app/",
   },
   {
     title: "TravelWithUs",
-  slug: "travelwithus",
-  description:
-    "A visually immersive travel booking platform featuring curated destinations, city-based themes, and seamless user experience for modern explorers.",
-  tags: ["Travel", "UI/UX", "Responsive", "Landing Page"],
-  liveUrl: "https://travelwithus-psi.vercel.app/",
+    slug: "travelwithus",
+    description:
+      "A visually immersive travel booking platform featuring curated destinations, city-based themes, and seamless UX for modern explorers.",
+    tags: ["Travel", "UI/UX", "Responsive"],
+    liveUrl: "https://travelwithus-psi.vercel.app/",
   },
   {
     title: "IronPeak Fitness",
-  slug: "ironpeak-fitness",
-  description:
-    "High-performance fitness and gym website designed to drive memberships through bold visuals, structured programs, and strong call-to-action sections.",
-  tags: ["Fitness", "Gym", "Landing Page", "Branding"],
-  liveUrl: "https://ironpeak-fitness-peach.vercel.app/",
+    slug: "ironpeak-fitness",
+    description:
+      "High-performance fitness and gym website designed to drive memberships through bold visuals and strong call-to-action sections.",
+    tags: ["Fitness", "Branding", "Landing Page"],
+    liveUrl: "https://ironpeak-fitness-peach.vercel.app/",
   },
 ];
 
@@ -50,7 +50,7 @@ export const services: Service[] = [
     number: "02",
   },
   {
-    title: "E-Commerce",
+    title: "E-Commerce Solutions",
     slug: "ecommerce",
     description:
       "End-to-end online stores with seamless checkout, inventory management and payment gateway integration.",
@@ -63,6 +63,13 @@ export const services: Service[] = [
       "Logo design, visual identity systems and brand guidelines that give your business a distinct, memorable presence.",
     number: "04",
   },
+];
+
+export const stats: Stat[] = [
+  { value: "50", suffix: "+", label: "Projects Delivered" },
+  { value: "98", suffix: "%", label: "Client Satisfaction" },
+  { value: "3", suffix: "x", label: "Avg. Conversion Lift" },
+  { value: "24", suffix: "hr", label: "Response Time" },
 ];
 
 export const testimonials: Testimonial[] = [
@@ -86,5 +93,33 @@ export const testimonials: Testimonial[] = [
     company: "Tara Finserv",
     quote:
       "From branding to the final website, every step was thoughtful and professional. They truly care about the craft and it shows in every interaction.",
+  },
+];
+
+export const processSteps = [
+  {
+    number: "01",
+    title: "Discovery",
+    description: "We dig into your brand, goals, audience, and competitors. Deep understanding before a single pixel.",
+  },
+  {
+    number: "02",
+    title: "Strategy",
+    description: "Wireframes, user flows, and a clear roadmap. We align on the 'what' and the 'why' before building.",
+  },
+  {
+    number: "03",
+    title: "Design",
+    description: "High-fidelity designs that look stunning and convert. Iterative refinement until it feels perfect.",
+  },
+  {
+    number: "04",
+    title: "Develop",
+    description: "Clean, performant code. We build with Next.js, React, and modern tooling — fast, accessible, SEO-ready.",
+  },
+  {
+    number: "05",
+    title: "Launch & Support",
+    description: "Smooth deployment, performance monitoring, and ongoing support. We don't disappear after launch.",
   },
 ];

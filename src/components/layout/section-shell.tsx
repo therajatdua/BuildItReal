@@ -7,20 +7,15 @@ interface SectionShellProps {
   children: ReactNode;
   className?: string;
   id?: string;
-  withSeparator?: boolean;
+  noPadding?: boolean;
 }
 
-function SectionShell({ children, className, id, withSeparator = true }: SectionShellProps) {
+function SectionShell({ children, className, id, noPadding }: SectionShellProps) {
   return (
-    <section id={id} className={cn("relative py-20 md:py-28", className)}>
+    <section id={id} className={cn("relative", !noPadding && "py-24 md:py-32 lg:py-40", className)}>
       <div className="container-main">
         {children}
       </div>
-      {withSeparator && (
-        <div className="container-main mt-20 md:mt-28">
-          <div className="dot-line" />
-        </div>
-      )}
     </section>
   );
 }
@@ -30,22 +25,24 @@ function SectionHeader({
   title,
   description,
   className,
+  center,
 }: {
   label?: string;
   title: string;
   description?: string;
   className?: string;
+  center?: boolean;
 }) {
   return (
-    <div className={cn("mb-12 md:mb-16 max-w-2xl", className)}>
+    <div className={cn("mb-16 md:mb-20", center && "text-center mx-auto", "max-w-3xl", className)}>
       {label && (
-        <span className="label-mono mb-4 block">{label}</span>
+        <span className="label-mono mb-4 block text-accent">{label}</span>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-ink leading-tight">
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base md:text-lg text-ink/60 leading-relaxed">
+        <p className="mt-5 text-base md:text-lg text-muted leading-relaxed max-w-2xl">
           {description}
         </p>
       )}

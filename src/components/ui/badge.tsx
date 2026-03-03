@@ -9,15 +9,15 @@ interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 
 const styles: Record<BadgeVariant, string> = {
   default: "bg-ink text-cream",
-  outline: "bg-transparent text-ink border-2 border-ink",
-  accent: "bg-accent text-cream",
+  outline: "bg-transparent text-muted border border-border",
+  accent: "bg-accent text-white",
 };
 
 function Badge({ className, variant = "default", ...props }: BadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center px-3 py-1 text-xs font-mono font-semibold uppercase tracking-widest",
+        "inline-flex items-center px-3 py-1 text-[10px] font-mono font-medium uppercase tracking-widest rounded-full",
         styles[variant],
         className
       )}
