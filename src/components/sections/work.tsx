@@ -75,7 +75,7 @@ function Work() {
                       </div>
                     </div>
 
-                    {/* Preview — right side (iframe) */}
+                    {/* Preview — right side (screenshot) */}
                     <div className="relative order-1 lg:order-2 overflow-hidden">
                       {/* Soft colored background */}
                       <div className={`absolute inset-0 ${colors.bg}`} />
@@ -90,16 +90,21 @@ function Work() {
                           <span className="ml-3 flex-1 h-5 rounded-full bg-border/60 max-w-[180px]" />
                         </div>
 
-                        {/* iframe */}
-                        <div className="relative aspect-[16/10] bg-white overflow-hidden">
-                          <iframe
-                            src={project.liveUrl}
-                            title={`${project.title} preview`}
-                            className="absolute top-0 left-0 w-[250%] h-[250%] origin-top-left pointer-events-none"
-                            style={{ transform: "scale(0.4)" }}
+                        {/* Screenshot */}
+                        <div className="relative aspect-[16/10] bg-cream-dark overflow-hidden">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={project.imageUrl}
+                            alt={`${project.title} preview`}
+                            className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
-                            sandbox="allow-scripts allow-same-origin"
                           />
+                          {/* Hover overlay */}
+                          <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-500 flex items-center justify-center">
+                            <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-ink flex items-center gap-1.5">
+                              Visit Live <ArrowUpRight className="w-3 h-3" />
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>

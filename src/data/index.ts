@@ -15,6 +15,7 @@ export const projects: Project[] = [
       "Modern digital agency website showcasing performance marketing, branding, and web development services with a bold, conversion-focused UI.",
     tags: ["Agency", "Marketing", "React"],
     liveUrl: "https://clixy-one.vercel.app/",
+    imageUrl: "https://image.thum.io/get/width/1280/crop/800/https://clixy-one.vercel.app/",
   },
   {
     title: "TravelWithUs",
@@ -23,6 +24,7 @@ export const projects: Project[] = [
       "A visually immersive travel booking platform featuring curated destinations, city-based themes, and seamless UX for modern explorers.",
     tags: ["Travel", "UI/UX", "Responsive"],
     liveUrl: "https://travelwithus-psi.vercel.app/",
+    imageUrl: "https://image.thum.io/get/width/1280/crop/800/https://travelwithus-psi.vercel.app/",
   },
   {
     title: "IronPeak Fitness",
@@ -31,6 +33,7 @@ export const projects: Project[] = [
       "High-performance fitness and gym website designed to drive memberships through bold visuals and strong call-to-action sections.",
     tags: ["Fitness", "Branding", "Landing Page"],
     liveUrl: "https://ironpeak-fitness-peach.vercel.app/",
+    imageUrl: "https://image.thum.io/get/width/1280/crop/800/https://ironpeak-fitness-peach.vercel.app/",
   },
 ];
 

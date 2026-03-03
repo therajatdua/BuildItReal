@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   tags: string[];
   liveUrl: string;
+  imageUrl: string;
 }
 
 export interface Service {
